@@ -1,0 +1,8 @@
+[user]
+	name = AustinVillanueva
+	email = avillann00@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+	editor = nvim
