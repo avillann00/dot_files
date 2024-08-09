@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = {"lua_ls", "jdtls", "biome", "kotlin_language_server", "texlab", "pyright", "ruff", "pyre", "clangd"}
+        ensure_installed = {"lua_ls", "jdtls", "biome", "kotlin_language_server", "texlab", "pyright", "ruff", "pyre", "clangd", "sqls"}
       })
     end
   },
@@ -28,9 +28,6 @@ return {
       lspconfig.jdtls.setup({
         capabilities = capabilities
       })
-      lspconfig.kotlin_language_server.setup({
-        capabilities = capabilities
-      })
       lspconfig.texlab.setup ({
         capabilities = capabilities
       })
@@ -43,7 +40,9 @@ return {
       lspconfig.ruff.setup ({
         capabilities = capabilities
       })
-      vim.keymap.set('n', 'H', vim.lsp.buf.hover, {})
+      lspconfig.sqls.setup ({
+        capabilities = capabilities
+      })
     end
   }
 }
