@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = {"lua_ls", "jdtls", "biome", "kotlin_language_server", "texlab", "pyright", "ruff", "pyre", "clangd", "sqls"}
+        ensure_installed = {"lua_ls", "jdtls", "biome", "kotlin_language_server", "texlab", "pyright", "ruff", "pyre", "clangd"}
       })
     end
   },
@@ -38,9 +38,6 @@ return {
         capabilities = capabilities
       })
       lspconfig.ruff.setup ({
-        capabilities = capabilities
-      })
-      lspconfig.sqls.setup ({
         capabilities = capabilities
       })
     end
