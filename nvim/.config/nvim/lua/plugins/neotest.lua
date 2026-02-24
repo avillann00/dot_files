@@ -10,13 +10,15 @@ return{
   config = function()
     require("neotest").setup({
       adapters = {
-        require("neotest-python")
+        require("neotest-python")({})
       }
     })
     vim.api.nvim_set_keymap('n', '<Space>tn', ':lua require("neotest").run.run()<CR>', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('n', '<Space>tf', ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('n', '<Space>tl', ':lua require("neotest").run.run_last()<CR>', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('n', '<Space>ts', ':lua require("neotest").summary.toggle()<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap("n", "<Space>to", ":lua require('neotest').output.open()<CR>", { noremap = true })
+
 
   end
 }
